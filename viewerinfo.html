@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+ <meta name="viewport" content="width=700">
+	 <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+	 <style type="text/css">
+	 	div{margin-top:150px;max-width: 100%;}
+	 	li{list-style: none;border:1px solid #000;}
+	 	div a[href*="000webhost"], div [style="text-align:right;position:fixed;z-index:9999999;bottom:0;width:auto;right:1%;cursor:pointer;line-height:0;display:block!important"],a [target="_blank"], div a [title~="Hosted on free web hosting 000webhost.com. Host your own website for FREE."]{display: none !important;}
+
+	 </style>
+  <script type="text/javascript">var cave='55555';</script>
+	<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+<body onload="getData()">
+	<div class="col-12 mx-auto">
+	<ul id="keydom" class="row mx-auto col-11">
+		<li class="col-1">ID</li>
+		<li class="col-2">Name</li>
+		<li class="col-6">Address</li>
+		<li class="col-3">Date</li>
+
+		
+	</ul>  <input type="hidden" value="https://blocktoblock" id="rez293" name=""/>
+
+
+
+</div>
+<script type="text/javascript">var mart = 'firebaseio.com';</script>
+<script type="text/javascript" src="./cont.js"></script>
+<script type="text/javascript">
+	var arr = [];
+	var rex = '';
+	arr = window.location.href;
+for (var i = arr.length - 5; i < arr.length; i++) {
+	rex = rex +""+arr[i];
+	//console.log(rex);
+}
+if(rex != cave){window.location.replace('./index.html');}
+</script>
+
+
+</body>
+</html>
