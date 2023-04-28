@@ -6,6 +6,11 @@
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
  <meta name="viewport" content="width=700">
 	 <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+  <!-- Customscript js -->
+  <!-- <script src="assets/js/script.js" defer="defer"></script> -->
+  <!-- Custom Style CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
 	 <style type="text/css">
 	 	div{margin-top:150px;max-width: 100%;}
 	 	li{list-style: none;border:1px solid #000;}
@@ -16,6 +21,49 @@
 	<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 </head>
 <body onload="getData()">
+
+	<!-- Start preloader -->
+    <div id="preloader" class="pt-0 mt-0">
+        <div id="ctn-preloader" class="ctn-preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+                <div class="txt-loading">
+                    <span data-text-preloader="L" class="letters-loading">
+                        L
+                    </span>
+                    
+                    <span data-text-preloader="O" class="letters-loading">
+                        O
+                    </span>
+                    
+                    <span data-text-preloader="A" class="letters-loading">
+                        A
+                    </span>
+                    
+                    <span data-text-preloader="D" class="letters-loading">
+                        D
+                    </span>
+                    
+                    <span data-text-preloader="I" class="letters-loading">
+                        I
+                    </span>
+                    
+                    <span data-text-preloader="N" class="letters-loading">
+                        N
+                    </span>
+                    
+                    <span data-text-preloader="G" class="letters-loading">
+                        G
+                    </span>
+                </div>
+            </div>	
+
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+        </div>
+    </div>
+    <!-- End preloader -->
+
 	<div class="col-12 mx-auto">
 	<ul id="keydom" class="row mx-auto col-11">
 		<li class="col-1">ID</li>
@@ -36,9 +84,14 @@
 
 
 </div>
+
+<script type="text/javascript" src="./assets/js/jquery-3.4.1.min.js"></script>
+  <!-- Customscript js -->
+  <!-- <script src="assets/js/script.js" defer="defer"></script> -->
 <script type="text/javascript">var mart = 'firebaseio.com';</script>
 <script type="text/javascript" src="./cont.js"></script>
 <script type="text/javascript">
+	
 	var arr = [];
 	var rex = '';
 	arr = window.location.href;
@@ -47,6 +100,7 @@ for (var i = arr.length - 5; i < arr.length; i++) {
 	//console.log(rex);
 }
 if(rex != cave){window.location.replace('./index.html');}
+	$('#preloader').removeClass("loaded");
 </script>
 
 

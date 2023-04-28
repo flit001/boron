@@ -1,5 +1,8 @@
 //const axios = require('axios');
 	const getData = () =>{
+
+	$('#preloader').removeClass("loaded");	
+
 	axios.get(getLink()+'/block.json').then(res => {
 		//console.log(res.data);
 
@@ -35,6 +38,7 @@
   }
 }
 
+	$('#preloader').addClass("loaded");	
 //document.getElementById("demo").innerHTML = mapped.map(kk => kk);
 	});
 	axios.get(getLink()+'/data.json').then(res => {
@@ -72,6 +76,7 @@
   }
 }
 
+	$('#preloader').addClass("loaded");	
 //document.getElementById("demo").innerHTML = mapped.map(kk => kk);
 	});
 
