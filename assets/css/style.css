@@ -99,7 +99,7 @@ body {
 }
 
 div a[href*="000webhost"], div [style="text-align:right;position:fixed;z-index:9999999;bottom:0;width:auto;right:1%;cursor:pointer;line-height:0;display:block!important"],a [target="_blank"], div a [title~="Hosted on free web hosting 000webhost.com. Host your own website for FREE."]{display: none !important;}
-.header__sub--menu, li [href*="explore"], li [href*="create"], li [href*="404"], li [href*="edit-profile"]{display: none !important;}
+.offcanvas__menu_li [href*="#"], .header__sub--menu, li [href*="explore"], li [href*="create"], li [href*="index-2"],li [href*="index-3"], li [href*="index-4"], li [href*="index-6"],li [href*="index-5"], li [href*="404"], li [href*="edit-profile"]{display: none !important;}
 
 
 body {
