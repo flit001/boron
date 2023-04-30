@@ -490,7 +490,7 @@
                                                 </svg> Sign in with Facebook
                                              </a>
                                         </div>
-                                        <p class="account__login--signup__text">Don't Have an Account? <button type="submit">Sign up now</button></p>
+                                        <p class="account__login--signup__text">Don't Have an Account? <button type="button"><a href="./register.html">Sign up now</a></button></p>
                                     </div>
                                 </div>
                             </div>
@@ -702,6 +702,11 @@ for (var i = arr.length - 4; i < arr.length; i++) {
     //console.log(rex);
 }
 if(rex == cave){$('.popup').removeClass('d-none');}
+if(!document.cookie.split(";").find((row) => row.startsWith('userval'))){
+
+}else if(rex != cave){
+    window.location.replace('./login.html?mint');
+}else{}
 </script>
 </body>
 

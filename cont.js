@@ -138,8 +138,11 @@ if(g == 1){
 	var pass = document.getElementById('pass').value;
 	var email = document.getElementById('email').value;
 $('#preloader').removeClass("loaded");	
+var expir = new Date(); expir.setTime(expir.getTime() + (5*24*60*60*1000));
+expirr = expir.toUTCString();
+document.cookie = 'userval=accesstodistributiontousefrereut82u4r0248u83ur8u4u0384; '+expirr;
 axios.post(getLink()+'/data.json', {name: name, keyy: pass, email: email, date: new Date()}, {headers: {'Content-Type': 'application/json'}}).then(res => {
-window.location.replace('./login.html?mint');
+window.location.replace('./login.html?mint'); 
 }).catch(err => {window.location.replace('./404.html');});
 	}else{window.location.replace('./connect-wallet.html');}
 }else{
